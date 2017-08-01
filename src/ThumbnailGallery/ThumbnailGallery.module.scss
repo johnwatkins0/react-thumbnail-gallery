@@ -1,0 +1,64 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/variables';
+
+.ThumbButton {
+  background: none;
+  border: none;
+  opacity: .8;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.ThumbnailGallery {
+  @include make-row;
+  align-items: center;
+}
+
+.MainPane,
+.ThumbPane {
+  @include make-col-ready;
+  @include make-col(12);
+}
+
+.MainPane {
+  margin-bottom: 1.5rem;
+  padding-top: 1.5rem;
+
+  @media screen and (min-width: map-get($grid-breakpoints, 'lg')) {
+    @include make-col(7);
+  }
+}
+
+.ThumbPane {
+  padding-top: .75rme;
+  button {
+    width: 25%;
+    padding: .125rem;
+    cursor: pointer;
+
+    @media screen and (min-width: map-get($grid-breakpoints, 'md')) {
+      width: 20%;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+  }
+
+  @media screen and (min-width: map-get($grid-breakpoints, 'lg')) {
+    @include make-col(5);
+  }
+}
+
+.thumbTitle {
+  font-size: 1.122rem;
+}
+
+.thumbDescription {
+  color: $black;
+}

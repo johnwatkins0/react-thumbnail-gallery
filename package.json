@@ -1,0 +1,38 @@
+{
+  "name": "wp-react-thumbnail-gallery",
+  "version": "1.0.0",
+  "description": "A responsive image gallery featuring (1) a pane showing the full image, and (2) a pane with image thumbnails, titles, and descriptions. Also includes an optional filter for the WordPress [gallery] shortcode.",
+  "main": "src/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnwatkins0/wp-react-thumbnail-gallery.git"
+  },
+  "keywords": [
+    "wordpress",
+    "react"
+  ],
+  "author": "John Watkins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnwatkins0/wp-react-thumbnail-gallery/issues"
+  },
+  "homepage": "https://github.com/johnwatkins0/wp-react-thumbnail-gallery#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "eslint-config-johnwatkins0": "git+https://github.com/johnwatkins0/eslint-config-johnwatkins0.git"
+  },
+  "eslintConfig": {
+    "extends": [
+      "johnwatkins0"
+    ]
+  },
+  "dependencies": {
+    "autoprefixer": "^7.1.2",
+    "bootstrap": "git://github.com/twbs/bootstrap.git#v4-dev",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}

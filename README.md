@@ -24,6 +24,12 @@ import { wordpressLoader } from 'wp-react-thumbnail-gallery'
 window.addEventListener('load', wordpressLoader);
 ```
 
+Use the WordPress gallery shortcode, adding a "thumbnail-gallery" attribute, whose value can be anything:
+
+```
+[gallery ids="1,2,3,4,5" thumbnail-gallery="1"]
+```
+
 ### Without WordPress
 
 // To-do

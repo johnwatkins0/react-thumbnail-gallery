@@ -5,7 +5,7 @@
 .ThumbButton {
   background: none;
   border: none;
-  opacity: .8;
+  opacity: 0.8;
 
   &.active {
     opacity: 1;
@@ -26,19 +26,18 @@
 .MainPane {
   margin-bottom: 1.5rem;
   padding-top: 1.5rem;
-
   @media screen and (min-width: map-get($grid-breakpoints, 'lg')) {
-    @include make-col(7);
+     @include make-col(7);
   }
 }
 
 .ThumbPane {
-  padding-top: .75rme;
+  padding-top: 0.75rem;
+
   button {
     width: 25%;
-    padding: .125rem;
+    padding: 0.125rem;
     cursor: pointer;
-
     @media screen and (min-width: map-get($grid-breakpoints, 'md')) {
       width: 20%;
     }
@@ -49,9 +48,8 @@
     max-width: 150px;
     height: auto;
   }
-
   @media screen and (min-width: map-get($grid-breakpoints, 'lg')) {
-    @include make-col(5);
+     @include make-col(5);
   }
 }
 

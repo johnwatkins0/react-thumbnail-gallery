@@ -1,6 +1,6 @@
 {
   "name": "wp-react-thumbnail-gallery",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A responsive image gallery featuring (1) a pane showing the full image, and (2) a pane with image thumbnails, titles, and descriptions. Also includes an optional filter for the WordPress [gallery] shortcode.",
   "main": "src/",
   "repository": {
@@ -11,7 +11,10 @@
     "build": "webpack -p && webpack -p --env.wordpress && webpack -p --env.dataAttributes",
     "build-dev": "webpack && webpack --env.wordpress && webpack --env.dataAttributes"
   },
-  "keywords": ["wordpress", "react"],
+  "keywords": [
+    "wordpress",
+    "react"
+  ],
   "author": "John Watkins",
   "license": "ISC",
   "bugs": {
@@ -37,15 +40,22 @@
     "webpack": "^3.4.1"
   },
   "eslintConfig": {
-    "extends": ["johnwatkins0"]
+    "extends": [
+      "johnwatkins0"
+    ]
   },
-  "eslintIgnore": ["dist/*.js"],
+  "eslintIgnore": [
+    "dist/*.js"
+  ],
   "dependencies": {
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
   "babel": {
-    "presets": ["es2015", "react"]
+    "presets": [
+      "es2015",
+      "react"
+    ]
   }
 }

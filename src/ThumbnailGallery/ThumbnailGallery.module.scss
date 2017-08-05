@@ -29,6 +29,11 @@
   @media screen and (min-width: map-get($grid-breakpoints, 'lg')) {
      @include make-col(7);
   }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .ThumbPane {

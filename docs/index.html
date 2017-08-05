@@ -3,9 +3,106 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>react-editable-html-element | docs</title>
-<link href="../dist/wp-react-thumbnail-gallery.min.css" media="all" rel="stylesheet" />
-<main>
-  ello
+<title>wp-react-thumbnail-gallery example</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" media="all" rel="stylesheet" />
+<link href="../dist/wp-react-thumbnail-gallery.css" media="all" rel="stylesheet" />
+<style>
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+
+</style>
+<main class="container">
+  <header class="row justify-content-between align-items-end">
+    <h1>
+      wp-react-thumbnail-gallery example
+    </h1>
+    <a href="https://github.com/johnwatkins0/wp-react-thumbnail-gallery" class="pl-2 text-right">
+      GitHub
+    </a>
+  </header>
+  <div class="row" data-thumbnail-gallery data-images='
+      [
+        {
+          "id": "blue",
+          "title": "Blue",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur maximus tristique tempor. Integer scelerisque libero eu libero maximus accumsan. Ut consectetur nec elit finibus pellentesque.",
+          "altText": "Blue",
+          "src": "images/blue.png",
+          "height": 600,
+          "width": 1200,
+          "thumbSrc": "images/blue-thumb.png",
+          "thumbHeight": 150,
+          "thumbWidth": 150
+        },
+        {
+          "id": "brown",
+          "title": "Brown",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur maximus tristique tempor. Integer scelerisque libero eu libero maximus accumsan. Ut consectetur nec elit finibus pellentesque.",
+          "altText": "Brown",
+          "src": "images/brown.png",
+          "height": 600,
+          "width": 1200,
+          "thumbSrc": "images/brown-thumb.png",
+          "thumbHeight": 150,
+          "thumbWidth": 150
+        },
+        {
+          "id": "green",
+          "title": "Green",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur maximus tristique tempor. Integer scelerisque libero eu libero maximus accumsan. Ut consectetur nec elit finibus pellentesque.",
+          "altText": "Green",
+          "src": "images/green.png",
+          "height": 600,
+          "width": 1200,
+          "thumbSrc": "images/green-thumb.png",
+          "thumbHeight": 150,
+          "thumbWidth": 150
+        },
+        {
+          "id": "orange",
+          "title": "Orange",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur maximus tristique tempor. Integer scelerisque libero eu libero maximus accumsan. Ut consectetur nec elit finibus pellentesque.",
+          "altText": "Orange",
+          "src": "images/orange.png",
+          "height": 600,
+          "width": 1200,
+          "thumbSrc": "images/orange-thumb.png",
+          "thumbHeight": 150,
+          "thumbWidth": 150
+        },
+        {
+          "id": "purple",
+          "title": "Purple",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur maximus tristique tempor. Integer scelerisque libero eu libero maximus accumsan. Ut consectetur nec elit finibus pellentesque.",
+          "altText": "Purple",
+          "src": "images/purple.png",
+          "height": 600,
+          "width": 1200,
+          "thumbSrc": "images/purple-thumb.png",
+          "thumbHeight": 150,
+          "thumbWidth": 150
+        },
+        {
+          "id": "red",
+          "title": "Red",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur maximus tristique tempor. Integer scelerisque libero eu libero maximus accumsan. Ut consectetur nec elit finibus pellentesque.",
+          "altText": "Red",
+          "src": "images/red.png",
+          "height": 600,
+          "width": 1200,
+          "thumbSrc": "images/red-thumb.png",
+          "thumbHeight": 150,
+          "thumbWidth": 150
+        }
+      ]
+    '>
+  </div>
 </main>
-<script type="text/javascript" src="../dist/wp-react-thumbnail-gallery.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/react@15.6.1/dist/react.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.min.js"></script>
+<script type="text/javascript" src="../dist/wp-react-thumbnail-gallery.dataAttributes.js"></script>
+<!-- <script type="text/javascript" src="https://unpkg.com/wp-react-thumbnail-gallery@1.0.2/dist/wp-react-thumbnail-gallery.min.dataAttributes.js"></script>-->

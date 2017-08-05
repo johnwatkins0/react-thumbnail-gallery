@@ -21,6 +21,7 @@ const maybeInitGallery = (container) => {
 };
 
 const loadFromDataAttributes = () => {
+  console.log('hi');
   Array.prototype.forEach.call(
     document.querySelectorAll('[data-thumbnail-gallery]'),
     maybeInitGallery

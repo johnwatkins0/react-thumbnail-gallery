@@ -9,12 +9,10 @@
   },
   "scripts": {
     "build": "webpack -p && webpack -p --env.wordpress && webpack -p --env.dataAttributes",
-    "build-dev": "webpack && webpack --env.wordpress && webpack --env.dataAttributes"
+    "build-dev": "webpack && webpack --env.wordpress && webpack --env.dataAttributes",
+    "build-all": "npm run build && npm run build-dev"
   },
-  "keywords": [
-    "wordpress",
-    "react"
-  ],
+  "keywords": ["wordpress", "react"],
   "author": "John Watkins",
   "license": "ISC",
   "bugs": {
@@ -40,22 +38,15 @@
     "webpack": "^3.4.1"
   },
   "eslintConfig": {
-    "extends": [
-      "johnwatkins0"
-    ]
+    "extends": ["johnwatkins0"]
   },
-  "eslintIgnore": [
-    "dist/*.js"
-  ],
+  "eslintIgnore": ["dist/*.js"],
   "dependencies": {
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
   "babel": {
-    "presets": [
-      "es2015",
-      "react"
-    ]
+    "presets": ["es2015", "react"]
   }
 }

@@ -93,7 +93,7 @@ Include the library and its dependencies from the unpkg CDN:
 Create an HTML container with two data attributes, `data-thumbnail-gallery` and `data-images`. `data-images` is a JSON array of objects with props to pass to the gallery component (see the "Props" section above) -- e.g. (from the [example](https://johnwatkins0.github.io/wp-react-thumbnail-gallery/)):
 
 ```HTML
-<div class="row" data-thumbnail-gallery data-images='
+<div data-thumbnail-gallery data-images='
     [
       {
         "id": "blue",

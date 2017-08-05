@@ -121,7 +121,6 @@ var maybeInitGallery = function maybeInitGallery(container) {
 };
 
 var loadFromDataAttributes = function loadFromDataAttributes() {
-  console.log('hi');
   Array.prototype.forEach.call(document.querySelectorAll('[data-thumbnail-gallery]'), maybeInitGallery);
 };
 

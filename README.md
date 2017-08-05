@@ -90,7 +90,7 @@ Include the library and its dependencies from the unpkg CDN:
 <script type="text/javascript" src="https://unpkg.com/wp-react-thumbnail-gallery@latest/dist/wp-react-thumbnail-gallery.min.dataAttributes.js"></script>
 ```
 
-Create an HTML container with two data attributes, `data-thumbnail-gallery` and `data-images`. `data-images` is a JSON array objects with props to pass to the gallery component (see the "Props" section above) -- e.g.:
+Create an HTML container with two data attributes, `data-thumbnail-gallery` and `data-images`. `data-images` is a JSON array of objects with props to pass to the gallery component (see the "Props" section above) -- e.g. (from the [example](https://johnwatkins0.github.io/wp-react-thumbnail-gallery/)):
 
 ```HTML
 <div class="row" data-thumbnail-gallery data-images='

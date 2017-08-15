@@ -22,9 +22,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	global $post;
 
 	$min = PROD === true ? '.min' : '';
-	$dist = PROD === true
-		? 'http://unpkg.com/wp-react-thumbnail-gallery@latest/dist'
-		: plugin_dir_url( __FILE__ ) . 'dist';
+	$dist = PROD === plugin_dir_url( __FILE__ ) . 'dist';
 
 
 	wp_register_script(

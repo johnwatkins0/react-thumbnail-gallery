@@ -22,7 +22,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	global $post;
 
 	$min = PROD === true ? '.min' : '';
-	$dist = PROD === plugin_dir_url( __FILE__ ) . 'dist';
+	$dist = plugin_dir_url( __FILE__ ) . 'dist';
 
 
 	wp_register_script(

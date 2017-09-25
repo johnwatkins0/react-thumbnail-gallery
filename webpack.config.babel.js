@@ -77,11 +77,16 @@ const main = (envArgs) => {
     },
     externals: {
       'prop-types': 'PropTypes',
-      'react': 'React',
-      'react-dom': 'ReactDOM',
     },
     target: 'web',
     plugins,
+    devtool: 'source-maps',
+    resolve: {
+      alias: {
+        'react': 'preact-compat',
+        'react-dom': 'preact-compat',
+      },
+    },
   };
 };
 

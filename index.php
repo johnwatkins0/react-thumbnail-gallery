@@ -33,7 +33,7 @@ add_action(
 			$dist = plugin_dir_url( __FILE__ ) . 'dist';
 
 			wp_enqueue_script(
-				$package_json->name, "$dist/{$package_json->name}$min.js",
+				$package_json->name, "$dist/{$package_json->name}$min.wordpress.js",
 				[ 'prop-types' ],
 				$package_json->version,
 				true

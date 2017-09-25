@@ -24,26 +24,27 @@ add_action(
 	'wp_enqueue_scripts', function() {
 		global $post;
 
-		$min = PROD === true ? '.min' : '';
-		$dist = plugin_dir_url( __FILE__ ) . 'dist';
-
-		wp_register_script(
-			'thumbnail-gallery', "$dist/wp-react-thumbnail-gallery$min.wordpress.js",
-			[ 'prop-types' ],
-			'',
-			true
-		);
-
-		wp_register_style(
-			'thumbnail-gallery',
-			"$dist/wp-react-thumbnail-gallery$min.css",
-			[],
-			''
-		);
-
 		if ( strpos( $post->post_content, 'thumbnail-gallery' ) !== false ) {
-			wp_enqueue_script( 'thumbnail-gallery' );
-			wp_enqueue_style( 'thumbnail-gallery' );
+			$package_json = json_decode( file_get_contents( __DIR__ . '/package.json' ) )
+			?: (object) [
+				'version' => '1.0.1',
+			];
+			$min = PROD === true ? '.min' : '';
+			$dist = plugin_dir_url( __FILE__ ) . 'dist';
+
+			wp_enqueue_script(
+				$package_json->name, "$dist/{$package_json->name}$min.js",
+				[ 'prop-types' ],
+				$package_json->version,
+				true
+			);
+
+			wp_enqueue_style(
+				$package_json->name,
+				"$dist/{$package_json->name}$min.css",
+				[],
+				$package_json->version
+			);
 		}
 	}, 10, 99
 );

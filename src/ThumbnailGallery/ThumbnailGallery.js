@@ -1,10 +1,15 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import styled from 'styled-components';
 
 import MainPane from './MainPane';
 import ThumbPane from './ThumbPane';
 
-import styles from './ThumbnailGallery.module.scss';
+const ThumbnailGalleryContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  align-items: center;
+`;
 
 class ThumbnailGallery extends React.Component {
   static propTypes = {
@@ -39,14 +44,14 @@ class ThumbnailGallery extends React.Component {
     )[0];
 
     return (
-      <div className={styles.ThumbnailGallery}>
+      <ThumbnailGalleryContainer className="ThumbnailGallery">
         <MainPane item={activeItem} />
         <ThumbPane
           items={this.props.items}
           activeItemId={activeItem.id}
           setActiveItem={this.setActiveItem}
         />
-      </div>
+      </ThumbnailGalleryContainer>
     );
   }
 }

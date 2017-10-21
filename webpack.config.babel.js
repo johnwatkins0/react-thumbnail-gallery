@@ -1,22 +1,23 @@
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import path from 'path';
-import packageJson from './package.json';
+import webpack from 'webpack';
 
-const main = (envArgs) => {
-  const env = envArgs || {};
-  const min = process.argv.includes('-p') ? '.min' : '';
+import pkg from './package.json';
 
-  let entry = './src/index.js';
-  let filename = `${packageJson.name}${min}.js`;
+const main = () => {
+  const PROD = process.argv.includes('-p');
+  const min = PROD ? '.min' : '';
+  const plugins = [];
+  const entry = ['babel-regenerator-runtime', './src/index.js'];
+  const filename = `${pkg.name}${min}.js`;
 
-  if (env.wordpress) {
-    entry = './src/index.wordpress.js';
-    filename = `${packageJson.name}${min}.wordpress.js`;
-  }
-
-  if (env.dataAttributes) {
-    entry = './src/index.dataAttributes.js';
-    filename = `${packageJson.name}${min}.dataAttributes.js`;
+  if (PROD) {
+    plugins.push(
+      new webpack.optimize.UglifyJsPlugin({
+        output: {
+          comments: false,
+        },
+      })
+    );
   }
 
   return {
@@ -24,44 +25,41 @@ const main = (envArgs) => {
     output: {
       filename,
       path: path.resolve(__dirname, 'dist'),
+      chunkFilename: `[id].[chunkhash].bundle${min}.js?v=${pkg.version}`,
+      publicPath: '/dist/',
     },
+    target: 'web',
+    plugins,
     module: {
       rules: [
         {
           test: /\.js$/,
+          exclude: [/node_modules/],
           use: [
             {
               loader: 'babel-loader',
-              options: { presets: ['react', 'es2015', 'stage-1'] },
+              options: {
+                presets: [
+                  'react',
+                  [
+                    'env',
+                    {
+                      targets: {
+                        browsers: ['> 1%', 'last 5 versions'],
+                      },
+                      debug: true,
+                    },
+                  ],
+                  'stage-0',
+                ],
+              },
             },
           ],
         },
-        {
-          test: /\.scss$/,
-          use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: [
-              {
-                loader: 'css-loader',
-                options: {
-                  modules: true,
-                  localIdentName: '[local]',
-                },
-              },
-              { loader: 'postcss-loader' },
-              { loader: 'sass-loader' },
-            ],
-          }),
-        },
       ],
     },
-    externals: {
-      'prop-types': 'PropTypes',
-      'react': 'React',
-      'react-dom': 'ReactDOM',
-    },
-    target: 'web',
-    plugins: [new ExtractTextPlugin(`${packageJson.name}${min}.css`)],
+
+    devtool: PROD ? false : 'source-maps',
   };
 };
 

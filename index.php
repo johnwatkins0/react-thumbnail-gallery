@@ -1,14 +1,9 @@
 <?php
+/**
+ * Plugin Name: Thumbnail gallery
+ * Description: A responsive image gallery featuring (1) a pane showing the full image, and (2) a pane with image thumbnails, titles, and descriptions. Also includes an optional filter for the WordPress [gallery] shortcode.
+ * Author: John Watkins, Colby Communications
+ */
 
-add_filter( 'post_gallery', function( $output, $atts ) {
-    if ( ! isset( $atts['thumbnail-gallery'] ) || '1' !== $atts['thumbnail-gallery'] ) {
-        return $output;
-    }
 
-	$ids = esc_attr( $atts['ids'] );
-	$endpoint = $atts['endpoint'] ?: get_rest_url() . 'wp/v2/media/';
-
-	return "
-		<div data-thumbnail-gallery data-endpoint=\"$endpoint\" data-ids=\"$ids\"></div>
-		";
-}, 10, 2 );
+include 'wp-autoload/index.php';

@@ -1,7 +1,10 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import styled from 'styled-components';
 
-import styles from './ThumbnailGallery.module.scss';
+const StyledThumbButton = styled.button`
+  background: none;
+  border: none;
+  opacity: ${(props) => (props.active ? '1' : '.8')};
+`;
 
 const ThumbButton = ({
   active,
@@ -11,15 +14,11 @@ const ThumbButton = ({
   src,
   setActiveItem,
   id,
-}) =>
-  (<button
-    className={
-      styles.ThumbButton + (active === true ? ` ${styles.active}` : '')
-    }
-    onClick={() => setActiveItem(id)}
-  >
+}) => (
+  <StyledThumbButton active={active} onClick={() => setActiveItem(id)}>
     <img src={src} alt={altText} height={height} width={width} />
-  </button>);
+  </StyledThumbButton>
+);
 
 ThumbButton.propTypes = {
   active: PropTypes.bool.isRequired,

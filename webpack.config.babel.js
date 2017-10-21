@@ -26,7 +26,7 @@ const main = () => {
       filename,
       path: path.resolve(__dirname, 'dist'),
       chunkFilename: `[id].[chunkhash].bundle${min}.js?v=${pkg.version}`,
-      publicPath: '/dist/',
+      publicPath: '/wp-react-thumbnail-gallery/dist/',
     },
     target: 'web',
     plugins,

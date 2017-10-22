@@ -1,36 +1,7 @@
+var ThumbnailGallery =
 /******/ (function(modules) { // webpackBootstrap
-/******/ 	// install a JSONP callback for chunk loading
-/******/ 	var parentJsonpFunction = window["webpackJsonp"];
-/******/ 	window["webpackJsonp"] = function webpackJsonpCallback(chunkIds, moreModules, executeModules) {
-/******/ 		// add "moreModules" to the modules object,
-/******/ 		// then flag all "chunkIds" as loaded and fire callback
-/******/ 		var moduleId, chunkId, i = 0, resolves = [], result;
-/******/ 		for(;i < chunkIds.length; i++) {
-/******/ 			chunkId = chunkIds[i];
-/******/ 			if(installedChunks[chunkId]) {
-/******/ 				resolves.push(installedChunks[chunkId][0]);
-/******/ 			}
-/******/ 			installedChunks[chunkId] = 0;
-/******/ 		}
-/******/ 		for(moduleId in moreModules) {
-/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
-/******/ 				modules[moduleId] = moreModules[moduleId];
-/******/ 			}
-/******/ 		}
-/******/ 		if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules, executeModules);
-/******/ 		while(resolves.length) {
-/******/ 			resolves.shift()();
-/******/ 		}
-/******/
-/******/ 	};
-/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-/******/
-/******/ 	// objects to store loaded and loading chunks
-/******/ 	var installedChunks = {
-/******/ 		4: 0
-/******/ 	};
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -56,55 +27,6 @@
 /******/ 		return module.exports;
 /******/ 	}
 /******/
-/******/ 	// This file contains only the entry chunk.
-/******/ 	// The chunk loading function for additional chunks
-/******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
-/******/ 		var installedChunkData = installedChunks[chunkId];
-/******/ 		if(installedChunkData === 0) {
-/******/ 			return new Promise(function(resolve) { resolve(); });
-/******/ 		}
-/******/
-/******/ 		// a Promise means "currently loading".
-/******/ 		if(installedChunkData) {
-/******/ 			return installedChunkData[2];
-/******/ 		}
-/******/
-/******/ 		// setup Promise in chunk cache
-/******/ 		var promise = new Promise(function(resolve, reject) {
-/******/ 			installedChunkData = installedChunks[chunkId] = [resolve, reject];
-/******/ 		});
-/******/ 		installedChunkData[2] = promise;
-/******/
-/******/ 		// start chunk loading
-/******/ 		var head = document.getElementsByTagName('head')[0];
-/******/ 		var script = document.createElement('script');
-/******/ 		script.type = 'text/javascript';
-/******/ 		script.charset = 'utf-8';
-/******/ 		script.async = true;
-/******/ 		script.timeout = 120000;
-/******/
-/******/ 		if (__webpack_require__.nc) {
-/******/ 			script.setAttribute("nonce", __webpack_require__.nc);
-/******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + chunkId + "." + {"0":"12b5f4e2ffd70e28f0bf","1":"6c5d6a6a9e291504bee0","2":"fd0a5ea0a3ae57521a4a","3":"2af8948bb345d8ac0f0c"}[chunkId] + ".bundle.js?v=1.0.14";
-/******/ 		var timeout = setTimeout(onScriptComplete, 120000);
-/******/ 		script.onerror = script.onload = onScriptComplete;
-/******/ 		function onScriptComplete() {
-/******/ 			// avoid mem leaks in IE.
-/******/ 			script.onerror = script.onload = null;
-/******/ 			clearTimeout(timeout);
-/******/ 			var chunk = installedChunks[chunkId];
-/******/ 			if(chunk !== 0) {
-/******/ 				if(chunk) {
-/******/ 					chunk[1](new Error('Loading chunk ' + chunkId + ' failed.'));
-/******/ 				}
-/******/ 				installedChunks[chunkId] = undefined;
-/******/ 			}
-/******/ 		};
-/******/ 		head.appendChild(script);
-/******/
-/******/ 		return promise;
-/******/ 	};
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -136,215 +58,40 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/wp-react-thumbnail-gallery/dist/";
-/******/
-/******/ 	// on error function for async loading
-/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports) {
 
-// shim for using process in browser
-var process = module.exports = {};
-
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-
-var cachedSetTimeout;
-var cachedClearTimeout;
-
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
+module.exports = react;
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-__webpack_require__(2);
-module.exports = __webpack_require__(4);
-
+module.exports = prop-types;
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports) {
+
+module.exports = styled-components;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(4);
+module.exports = __webpack_require__(7);
+
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {/**
@@ -1005,10 +752,10 @@ module.exports = __webpack_require__(4);
   typeof self === "object" ? self : this
 );
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(6)))
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, exports) {
 
 var g;
@@ -1035,235 +782,514 @@ module.exports = g;
 
 
 /***/ }),
-/* 4 */
+/* 6 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _ThumbnailGallery = __webpack_require__(8);
+
+var _ThumbnailGallery2 = _interopRequireDefault(_ThumbnailGallery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _ThumbnailGallery2.default;
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-wrap: wrap;\n  margin-left: -1.5rem;\n  margin-right: -1.5rem;\n  align-items: center;\n'], ['\n  display: flex;\n  flex-wrap: wrap;\n  margin-left: -1.5rem;\n  margin-right: -1.5rem;\n  align-items: center;\n']);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(1);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _styledComponents = __webpack_require__(2);
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+var _MainPane = __webpack_require__(9);
+
+var _MainPane2 = _interopRequireDefault(_MainPane);
+
+var _ThumbPane = __webpack_require__(10);
+
+var _ThumbPane2 = _interopRequireDefault(_ThumbPane);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ThumbnailGalleryLoader = function () {
-  function ThumbnailGalleryLoader(container) {
-    _classCallCheck(this, ThumbnailGalleryLoader);
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-    this.container = container;
-    this.endpoint = container.hasAttribute('data-endpoint') ? container.getAttribute('data-endpoint') : null;
-    this.items = container.hasAttribute('data-images') ? JSON.parse(container.getAttribute('data-images')) : null;
-    this.ids = container.hasAttribute('data-ids') ? JSON.parse(container.getAttribute('data-ids')).replace(/ /g, '') : null;
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var ThumbnailGalleryContainer = _styledComponents2.default.div(_templateObject);
+
+var ThumbnailGallery = function (_React$Component) {
+  _inherits(ThumbnailGallery, _React$Component);
+
+  function ThumbnailGallery(props) {
+    _classCallCheck(this, ThumbnailGallery);
+
+    var _this = _possibleConstructorReturn(this, (ThumbnailGallery.__proto__ || Object.getPrototypeOf(ThumbnailGallery)).call(this, props));
+
+    _this.state = {
+      activeItem: null
+    };
+
+    _this.setActiveItem = _this.setActiveItem.bind(_this);
+    return _this;
   }
 
-  _createClass(ThumbnailGalleryLoader, [{
-    key: 'shouldRun',
-    value: function shouldRun() {
-      return this.container && (this.endpoint && this.ids || this.items);
+  _createClass(ThumbnailGallery, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.setActiveItem(this.props.items[0].id);
     }
   }, {
-    key: 'fetchFromWordPress',
-    value: function fetchFromWordPress() {
-      var _this = this;
-
-      return new Promise(function () {
-        var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(resolve) {
-          var url, response, items;
-          return regeneratorRuntime.wrap(function _callee$(_context) {
-            while (1) {
-              switch (_context.prev = _context.next) {
-                case 0:
-                  url = _this.endpoint + '?include=' + _this.ids + '&orderby=include&per_page=99';
-                  _context.next = 3;
-                  return fetch(url);
-
-                case 3:
-                  response = _context.sent;
-                  _context.next = 6;
-                  return response.json();
-
-                case 6:
-                  items = _context.sent;
-
-
-                  resolve(items);
-
-                case 8:
-                case 'end':
-                  return _context.stop();
-              }
-            }
-          }, _callee, _this);
-        }));
-
-        return function (_x) {
-          return _ref.apply(this, arguments);
-        };
-      }());
+    key: 'setActiveItem',
+    value: function setActiveItem(activeItem) {
+      this.setState({ activeItem: activeItem });
     }
   }, {
-    key: 'run',
-    value: function () {
-      var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-        return regeneratorRuntime.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                if (!(this.images === null)) {
-                  _context2.next = 4;
-                  break;
-                }
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
 
-                _context2.next = 3;
-                return this.fetchFromWordPress();
-
-              case 3:
-                this.items = _context2.sent;
-
-              case 4:
-
-                ReactDOM.render(React.createElement(ThumbnailGallery, { items: this.items }), this.container);
-
-              case 5:
-              case 'end':
-                return _context2.stop();
-            }
-          }
-        }, _callee2, this);
-      }));
-
-      function run() {
-        return _ref2.apply(this, arguments);
+      if (this.state.activeItem === null) {
+        return null;
       }
 
-      return run;
-    }()
+      var activeItem = this.props.items.filter(function (item) {
+        return item.id === _this2.state.activeItem;
+      })[0];
+
+      return _react2.default.createElement(
+        ThumbnailGalleryContainer,
+        { className: 'ThumbnailGallery' },
+        _react2.default.createElement(_MainPane2.default, { item: activeItem }),
+        _react2.default.createElement(_ThumbPane2.default, {
+          items: this.props.items,
+          activeItemId: activeItem.id,
+          setActiveItem: this.setActiveItem
+        })
+      );
+    }
   }]);
 
-  return ThumbnailGalleryLoader;
-}();
+  return ThumbnailGallery;
+}(_react2.default.Component);
 
-var loadDependencies = function loadDependencies() {
-  return new Promise(function () {
-    var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(resolve) {
-      var module;
-      return regeneratorRuntime.wrap(function _callee3$(_context3) {
-        while (1) {
-          switch (_context3.prev = _context3.next) {
-            case 0:
-              if ('PropTypes' in window) {
-                _context3.next = 4;
-                break;
-              }
+ThumbnailGallery.propTypes = {
+  items: _propTypes2.default.arrayOf(_propTypes2.default.object).isRequired
+};
+exports.default = ThumbnailGallery;
 
-              _context3.next = 3;
-              return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 6));
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
 
-            case 3:
-              window.PropTypes = _context3.sent;
+"use strict";
 
-            case 4:
-              if ('React' in window) {
-                _context3.next = 8;
-                break;
-              }
 
-              _context3.next = 7;
-              return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 5));
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-            case 7:
-              window.React = _context3.sent;
+var _templateObject = _taggedTemplateLiteral(['\n  padding-left: 1.5rem;\n  padding-right: 1.5rem;\n  flex: 0 0 100%;\n  min-width: 100%;\n  margin-bottom: 1.5rem;\n  padding-top: 1.5rem;\n\n  @media screen and (min-width: 992px) {\n    flex: 0 0 ', '%;\n    min-width: ', '%;\n  }\n\n  img {\n    width: 100%;\n    height: auto;\n  }\n'], ['\n  padding-left: 1.5rem;\n  padding-right: 1.5rem;\n  flex: 0 0 100%;\n  min-width: 100%;\n  margin-bottom: 1.5rem;\n  padding-top: 1.5rem;\n\n  @media screen and (min-width: 992px) {\n    flex: 0 0 ', '%;\n    min-width: ', '%;\n  }\n\n  img {\n    width: 100%;\n    height: auto;\n  }\n']);
 
-            case 8:
-              if ('ReactDOM' in window) {
-                _context3.next = 12;
-                break;
-              }
+var _react = __webpack_require__(0);
 
-              _context3.next = 11;
-              return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 7));
+var _react2 = _interopRequireDefault(_react);
 
-            case 11:
-              window.ReactDOM = _context3.sent;
+var _propTypes = __webpack_require__(1);
 
-            case 12:
-              if ('ThumbnailGallery' in window) {
-                _context3.next = 17;
-                break;
-              }
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
-              _context3.next = 15;
-              return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 8));
+var _styledComponents = __webpack_require__(2);
 
-            case 15:
-              module = _context3.sent;
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-              window.ThumbnailGallery = module.default;
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-            case 17:
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-              resolve();
+var MainPaneDiv = _styledComponents2.default.div(_templateObject, 100 / 12 * 7, 100 / 12 * 7);
 
-            case 18:
-            case 'end':
-              return _context3.stop();
-          }
-        }
-      }, _callee3, undefined);
-    }));
-
-    return function (_x2) {
-      return _ref3.apply(this, arguments);
-    };
-  }());
+var MainPane = function MainPane(_ref) {
+  var item = _ref.item;
+  return _react2.default.createElement(
+    MainPaneDiv,
+    null,
+    _react2.default.createElement('img', {
+      src: item.src,
+      height: item.height,
+      width: item.width,
+      alt: item.altText
+    })
+  );
 };
 
-var init = function () {
-  var _ref4 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
-    var containers;
-    return regeneratorRuntime.wrap(function _callee4$(_context4) {
-      while (1) {
-        switch (_context4.prev = _context4.next) {
-          case 0:
-            containers = document.querySelectorAll('[data-thumbnail-gallery ]');
+MainPane.propTypes = {
+  item: _propTypes2.default.objectOf(_propTypes2.default.any).isRequired
+};
 
-            if (containers) {
-              _context4.next = 3;
-              break;
-            }
+exports.default = MainPane;
 
-            return _context4.abrupt('return');
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
 
-          case 3:
-            _context4.next = 5;
-            return loadDependencies();
+"use strict";
 
-          case 5:
 
-            Array.prototype.forEach.call(containers, function (container) {
-              var loader = new ThumbnailGalleryLoader(container);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-              if (loader.shouldRun()) {
-                loader.run();
-              }
-            });
+var _templateObject = _taggedTemplateLiteral(['\n  padding-top: 0.75rem;\n  padding-left: 1.5rem;\n  padding-right: 1.5rem;\n  flex: 0 0 100%;\n  min-width: 100%;\n\n  button {\n    width: 25%;\n    padding: 0.125rem;\n    cursor: pointer;\n\n    @media screen and (min-width: 768px) {\n      width: 20%;\n    }\n  }\n\n  img {\n    width: 100%;\n    max-width: 150px;\n    height: auto;\n  }\n\n  @media screen and (min-width: 992px) {\n    flex: 0 0 ', '%;\n    min-width: ', '%;\n  }\n'], ['\n  padding-top: 0.75rem;\n  padding-left: 1.5rem;\n  padding-right: 1.5rem;\n  flex: 0 0 100%;\n  min-width: 100%;\n\n  button {\n    width: 25%;\n    padding: 0.125rem;\n    cursor: pointer;\n\n    @media screen and (min-width: 768px) {\n      width: 20%;\n    }\n  }\n\n  img {\n    width: 100%;\n    max-width: 150px;\n    height: auto;\n  }\n\n  @media screen and (min-width: 992px) {\n    flex: 0 0 ', '%;\n    min-width: ', '%;\n  }\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  font-size: 1.122rem;\n'], ['\n  font-size: 1.122rem;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  color: $black;\n'], ['\n  color: $black;\n']);
 
-          case 6:
-          case 'end':
-            return _context4.stop();
-        }
-      }
-    }, _callee4, undefined);
-  }));
+var _react = __webpack_require__(0);
 
-  return function init() {
-    return _ref4.apply(this, arguments);
-  };
-}();
+var _react2 = _interopRequireDefault(_react);
 
-window.addEventListener('load', init);
+var _propTypes = __webpack_require__(1);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _styledComponents = __webpack_require__(2);
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+var _ThumbButton = __webpack_require__(11);
+
+var _ThumbButton2 = _interopRequireDefault(_ThumbButton);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); } /* eslint react/no-danger: 0 */
+
+
+var ThumbPaneContainer = _styledComponents2.default.div(_templateObject, 100 / 12 * 5, 100 / 12 * 5);
+
+var ThumbTitle = _styledComponents2.default.h1(_templateObject2);
+
+var ThumbDescription = _styledComponents2.default.p(_templateObject3);
+
+var ThumbPane = function ThumbPane(_ref) {
+  var items = _ref.items,
+      activeItemId = _ref.activeItemId,
+      setActiveItem = _ref.setActiveItem;
+
+  var activeItem = items.filter(function (item) {
+    return item.id === activeItemId;
+  })[0];
+
+  return _react2.default.createElement(
+    ThumbPaneContainer,
+    null,
+    _react2.default.createElement(ThumbTitle, { dangerouslySetInnerHTML: { __html: activeItem.title } }),
+    _react2.default.createElement(ThumbDescription, {
+      dangerouslySetInnerHTML: { __html: activeItem.description }
+    }),
+    items.map(function (item) {
+      return _react2.default.createElement(_ThumbButton2.default, {
+        key: item.id,
+        altText: item.altText,
+        height: item.thumbHeight,
+        width: item.thumbWidth,
+        src: item.thumbSrc,
+        active: item.id === activeItemId,
+        setActiveItem: setActiveItem,
+        id: item.id
+      });
+    })
+  );
+};
+
+ThumbPane.propTypes = {
+  items: _propTypes2.default.arrayOf(_propTypes2.default.object).isRequired,
+  activeItemId: _propTypes2.default.string.isRequired,
+  setActiveItem: _propTypes2.default.func.isRequired
+};
+
+exports.default = ThumbPane;
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _templateObject = _taggedTemplateLiteral(['\n  background: none;\n  border: none;\n  opacity: ', ';\n'], ['\n  background: none;\n  border: none;\n  opacity: ', ';\n']);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(1);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _styledComponents = __webpack_require__(2);
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var StyledThumbButton = _styledComponents2.default.button(_templateObject, function (props) {
+  return props.active ? '1' : '.8';
+});
+
+var ThumbButton = function ThumbButton(_ref) {
+  var active = _ref.active,
+      altText = _ref.altText,
+      height = _ref.height,
+      width = _ref.width,
+      src = _ref.src,
+      setActiveItem = _ref.setActiveItem,
+      id = _ref.id;
+  return _react2.default.createElement(
+    StyledThumbButton,
+    { active: active, onClick: function onClick() {
+        return setActiveItem(id);
+      } },
+    _react2.default.createElement('img', { src: src, alt: altText, height: height, width: width })
+  );
+};
+
+ThumbButton.propTypes = {
+  active: _propTypes2.default.bool.isRequired,
+  altText: _propTypes2.default.string.isRequired,
+  height: _propTypes2.default.number.isRequired,
+  id: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]).isRequired,
+  setActiveItem: _propTypes2.default.func.isRequired,
+  src: _propTypes2.default.string.isRequired,
+  width: _propTypes2.default.number.isRequired
+};
+
+exports.default = ThumbButton;
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=wp-react-thumbnail-gallery.js.map

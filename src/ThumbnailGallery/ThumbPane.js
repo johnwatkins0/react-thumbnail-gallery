@@ -1,4 +1,6 @@
 /* eslint react/no-danger: 0 */
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import ThumbButton from './ThumbButton';

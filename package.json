@@ -1,15 +1,17 @@
 {
   "name": "react-thumbnail-gallery",
-  "version": "2.0.0",
-  "description":
-    "A responsive image gallery featuring (1) a pane showing the full image, and (2) a pane with image thumbnails, titles, and descriptions.",
+  "version": "2.0.1",
+  "description": "A responsive image gallery featuring (1) a pane showing the full image, and (2) a pane with image thumbnails, titles, and descriptions.",
   "main": "src/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/johnwatkins0/react-thumbnail-gallery.git"
   },
   "scripts": {},
-  "keywords": ["wordpress", "react"],
+  "keywords": [
+    "wordpress",
+    "react"
+  ],
   "author": "John Watkins",
   "license": "ISC",
   "bugs": {
@@ -22,11 +24,12 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-webpack": "^1.0.0",
-    "eslint-config-johnwatkins0":
-      "git+https://github.com/johnwatkins0/eslint-config-johnwatkins0.git"
+    "eslint-config-johnwatkins0": "git+https://github.com/johnwatkins0/eslint-config-johnwatkins0.git"
   },
   "eslintConfig": {
-    "extends": ["johnwatkins0"],
+    "extends": [
+      "johnwatkins0"
+    ],
     "globals": {
       "React": true,
       "ReactDOM": true,
@@ -36,7 +39,10 @@
   },
   "dependencies": {},
   "babel": {
-    "presets": ["env", "react"]
+    "presets": [
+      "env",
+      "react"
+    ]
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",

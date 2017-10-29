@@ -1,26 +1,24 @@
 {
-  "name": "react-thumbnail-gallery",
-  "version": "1.0.1",
+  "name": "wp-react-thumbnail-gallery",
+  "version": "1.0.9",
   "description":
-    "A responsive image gallery featuring (1) a pane showing the full image, and (2) a pane with image thumbnails, titles, and descriptions.",
-  "main": "src/index.js",
+    "A responsive image gallery featuring (1) a pane showing the full image, and (2) a pane with image thumbnails, titles, and descriptions. Also includes an optional filter for the WordPress [gallery] shortcode.",
+  "main": "src/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/johnwatkins0/wp-react-thumbnail-gallery.git"
   },
   "scripts": {},
-  "keywords": ["react"],
+  "keywords": ["wordpress", "react"],
   "author": "John Watkins",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/johnwatkins0/wp-react-thumbnail-gallery/issues"
   },
-  "homepage":
-    "https://github.com/johnwatkins0/wp-react-thumbnail-gallery#readme",
+  "homepage": "https://github.com/johnwatkins0/wp-react-thumbnail-gallery#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-loader": "^7.1.1",
-    "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
@@ -31,28 +29,15 @@
     "webpack": "^3.4.1"
   },
   "eslintConfig": {
-    "extends": ["johnwatkins0"],
-    "rules": {
-      "react/react-in-jsx-scope": 0,
-      "react/jsx-no-undef": 0,
-      "no-mixed-operators": 0,
-      "arrow-parens": 0
-    },
-    "globals": {
-      "React": true,
-      "PropTypes": true,
-      "ReactDOM": true,
-      "ThumbnailGallery": true
-    }
+    "extends": ["johnwatkins0"]
   },
   "eslintIgnore": ["dist/*.js"],
   "dependencies": {
     "prop-types": "^15.5.10",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "styled-components": "^2.2.1"
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "babel": {
-    "presets": ["es2015", "react"]
+    "presets": ["env", "react"]
   }
 }

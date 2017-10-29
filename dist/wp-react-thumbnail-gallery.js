@@ -1,5 +1,14 @@
-var ThumbnailGallery =
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["ThumbnailGallery"] = factory();
+	else
+		root["ThumbnailGallery"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -61,37 +70,19 @@ var ThumbnailGallery =
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = react;
+__webpack_require__(1);
+module.exports = __webpack_require__(4);
+
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
-
-module.exports = prop-types;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-module.exports = styled-components;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(4);
-module.exports = __webpack_require__(7);
-
-
-/***/ }),
-/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {/**
@@ -752,10 +743,10 @@ module.exports = __webpack_require__(7);
   typeof self === "object" ? self : this
 );
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(6)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(3)))
 
 /***/ }),
-/* 5 */
+/* 2 */
 /***/ (function(module, exports) {
 
 var g;
@@ -782,7 +773,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 6 */
+/* 3 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -972,7 +963,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 7 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -982,7 +973,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _ThumbnailGallery = __webpack_require__(8);
+var _ThumbnailGallery = __webpack_require__(5);
 
 var _ThumbnailGallery2 = _interopRequireDefault(_ThumbnailGallery);
 
@@ -991,7 +982,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _ThumbnailGallery2.default;
 
 /***/ }),
-/* 8 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1005,23 +996,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-wrap: wrap;\n  margin-left: -1.5rem;\n  margin-right: -1.5rem;\n  align-items: center;\n'], ['\n  display: flex;\n  flex-wrap: wrap;\n  margin-left: -1.5rem;\n  margin-right: -1.5rem;\n  align-items: center;\n']);
 
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _styledComponents = __webpack_require__(2);
-
-var _styledComponents2 = _interopRequireDefault(_styledComponents);
-
-var _MainPane = __webpack_require__(9);
+var _MainPane = __webpack_require__(6);
 
 var _MainPane2 = _interopRequireDefault(_MainPane);
 
-var _ThumbPane = __webpack_require__(10);
+var _ThumbPane = __webpack_require__(7);
 
 var _ThumbPane2 = _interopRequireDefault(_ThumbPane);
 
@@ -1035,7 +1014,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var ThumbnailGalleryContainer = _styledComponents2.default.div(_templateObject);
+var ThumbnailGalleryContainer = styled.div(_templateObject);
 
 var ThumbnailGallery = function (_React$Component) {
   _inherits(ThumbnailGallery, _React$Component);
@@ -1076,11 +1055,11 @@ var ThumbnailGallery = function (_React$Component) {
         return item.id === _this2.state.activeItem;
       })[0];
 
-      return _react2.default.createElement(
+      return React.createElement(
         ThumbnailGalleryContainer,
         { className: 'ThumbnailGallery' },
-        _react2.default.createElement(_MainPane2.default, { item: activeItem }),
-        _react2.default.createElement(_ThumbPane2.default, {
+        React.createElement(_MainPane2.default, { item: activeItem }),
+        React.createElement(_ThumbPane2.default, {
           items: this.props.items,
           activeItemId: activeItem.id,
           setActiveItem: this.setActiveItem
@@ -1090,15 +1069,15 @@ var ThumbnailGallery = function (_React$Component) {
   }]);
 
   return ThumbnailGallery;
-}(_react2.default.Component);
+}(React.Component);
 
 ThumbnailGallery.propTypes = {
-  items: _propTypes2.default.arrayOf(_propTypes2.default.object).isRequired
+  items: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 exports.default = ThumbnailGallery;
 
 /***/ }),
-/* 9 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1108,48 +1087,29 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  padding-left: 1.5rem;\n  padding-right: 1.5rem;\n  flex: 0 0 100%;\n  min-width: 100%;\n  margin-bottom: 1.5rem;\n  padding-top: 1.5rem;\n\n  @media screen and (min-width: 992px) {\n    flex: 0 0 ', '%;\n    min-width: ', '%;\n  }\n\n  img {\n    width: 100%;\n    height: auto;\n  }\n'], ['\n  padding-left: 1.5rem;\n  padding-right: 1.5rem;\n  flex: 0 0 100%;\n  min-width: 100%;\n  margin-bottom: 1.5rem;\n  padding-top: 1.5rem;\n\n  @media screen and (min-width: 992px) {\n    flex: 0 0 ', '%;\n    min-width: ', '%;\n  }\n\n  img {\n    width: 100%;\n    height: auto;\n  }\n']);
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _styledComponents = __webpack_require__(2);
-
-var _styledComponents2 = _interopRequireDefault(_styledComponents);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _templateObject = _taggedTemplateLiteral(["\n  padding-left: 1.5rem;\n  padding-right: 1.5rem;\n  flex: 0 0 100%;\n  min-width: 100%;\n  margin-bottom: 1.5rem;\n  padding-top: 1.5rem;\n\n  @media screen and (min-width: 992px) {\n    flex: 0 0 ", "%;\n    min-width: ", "%;\n  }\n\n  img {\n    width: 100%;\n    height: auto;\n  }\n"], ["\n  padding-left: 1.5rem;\n  padding-right: 1.5rem;\n  flex: 0 0 100%;\n  min-width: 100%;\n  margin-bottom: 1.5rem;\n  padding-top: 1.5rem;\n\n  @media screen and (min-width: 992px) {\n    flex: 0 0 ", "%;\n    min-width: ", "%;\n  }\n\n  img {\n    width: 100%;\n    height: auto;\n  }\n"]);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var MainPaneDiv = _styledComponents2.default.div(_templateObject, 100 / 12 * 7, 100 / 12 * 7);
+var MainPaneDiv = styled.div(_templateObject, 100 / 12 * 7, 100 / 12 * 7);
 
 var MainPane = function MainPane(_ref) {
   var item = _ref.item;
-  return _react2.default.createElement(
+  return React.createElement(
     MainPaneDiv,
     null,
-    _react2.default.createElement('img', {
-      src: item.src,
-      height: item.height,
-      width: item.width,
-      alt: item.altText
-    })
+    React.createElement("img", { src: item.src, height: item.height, width: item.width, alt: item.altText })
   );
 };
 
 MainPane.propTypes = {
-  item: _propTypes2.default.objectOf(_propTypes2.default.any).isRequired
+  item: PropTypes.objectOf(PropTypes.any).isRequired
 };
 
 exports.default = MainPane;
 
 /***/ }),
-/* 10 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1163,19 +1123,7 @@ var _templateObject = _taggedTemplateLiteral(['\n  padding-top: 0.75rem;\n  padd
     _templateObject2 = _taggedTemplateLiteral(['\n  font-size: 1.122rem;\n'], ['\n  font-size: 1.122rem;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  color: $black;\n'], ['\n  color: $black;\n']);
 
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _styledComponents = __webpack_require__(2);
-
-var _styledComponents2 = _interopRequireDefault(_styledComponents);
-
-var _ThumbButton = __webpack_require__(11);
+var _ThumbButton = __webpack_require__(8);
 
 var _ThumbButton2 = _interopRequireDefault(_ThumbButton);
 
@@ -1184,11 +1132,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); } /* eslint react/no-danger: 0 */
 
 
-var ThumbPaneContainer = _styledComponents2.default.div(_templateObject, 100 / 12 * 5, 100 / 12 * 5);
+var ThumbPaneContainer = styled.div(_templateObject, 100 / 12 * 5, 100 / 12 * 5);
 
-var ThumbTitle = _styledComponents2.default.h1(_templateObject2);
+var ThumbTitle = styled.h1(_templateObject2);
 
-var ThumbDescription = _styledComponents2.default.p(_templateObject3);
+var ThumbDescription = styled.p(_templateObject3);
 
 var ThumbPane = function ThumbPane(_ref) {
   var items = _ref.items,
@@ -1199,15 +1147,13 @@ var ThumbPane = function ThumbPane(_ref) {
     return item.id === activeItemId;
   })[0];
 
-  return _react2.default.createElement(
+  return React.createElement(
     ThumbPaneContainer,
     null,
-    _react2.default.createElement(ThumbTitle, { dangerouslySetInnerHTML: { __html: activeItem.title } }),
-    _react2.default.createElement(ThumbDescription, {
-      dangerouslySetInnerHTML: { __html: activeItem.description }
-    }),
+    React.createElement(ThumbTitle, { dangerouslySetInnerHTML: { __html: activeItem.title } }),
+    React.createElement(ThumbDescription, { dangerouslySetInnerHTML: { __html: activeItem.description } }),
     items.map(function (item) {
-      return _react2.default.createElement(_ThumbButton2.default, {
+      return React.createElement(_ThumbButton2.default, {
         key: item.id,
         altText: item.altText,
         height: item.thumbHeight,
@@ -1222,15 +1168,15 @@ var ThumbPane = function ThumbPane(_ref) {
 };
 
 ThumbPane.propTypes = {
-  items: _propTypes2.default.arrayOf(_propTypes2.default.object).isRequired,
-  activeItemId: _propTypes2.default.string.isRequired,
-  setActiveItem: _propTypes2.default.func.isRequired
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  activeItemId: PropTypes.string.isRequired,
+  setActiveItem: PropTypes.func.isRequired
 };
 
 exports.default = ThumbPane;
 
 /***/ }),
-/* 11 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1242,23 +1188,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _templateObject = _taggedTemplateLiteral(['\n  background: none;\n  border: none;\n  opacity: ', ';\n'], ['\n  background: none;\n  border: none;\n  opacity: ', ';\n']);
 
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _styledComponents = __webpack_require__(2);
-
-var _styledComponents2 = _interopRequireDefault(_styledComponents);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var StyledThumbButton = _styledComponents2.default.button(_templateObject, function (props) {
+var StyledThumbButton = styled.button(_templateObject, function (props) {
   return props.active ? '1' : '.8';
 });
 
@@ -1270,26 +1202,27 @@ var ThumbButton = function ThumbButton(_ref) {
       src = _ref.src,
       setActiveItem = _ref.setActiveItem,
       id = _ref.id;
-  return _react2.default.createElement(
+  return React.createElement(
     StyledThumbButton,
     { active: active, onClick: function onClick() {
         return setActiveItem(id);
       } },
-    _react2.default.createElement('img', { src: src, alt: altText, height: height, width: width })
+    React.createElement('img', { src: src, alt: altText, height: height, width: width })
   );
 };
 
 ThumbButton.propTypes = {
-  active: _propTypes2.default.bool.isRequired,
-  altText: _propTypes2.default.string.isRequired,
-  height: _propTypes2.default.number.isRequired,
-  id: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]).isRequired,
-  setActiveItem: _propTypes2.default.func.isRequired,
-  src: _propTypes2.default.string.isRequired,
-  width: _propTypes2.default.number.isRequired
+  active: PropTypes.bool.isRequired,
+  altText: PropTypes.string.isRequired,
+  height: PropTypes.number.isRequired,
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  setActiveItem: PropTypes.func.isRequired,
+  src: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired
 };
 
 exports.default = ThumbButton;
 
 /***/ })
 /******/ ]);
+});

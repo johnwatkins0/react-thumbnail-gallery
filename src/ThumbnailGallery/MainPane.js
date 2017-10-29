@@ -1,14 +1,26 @@
 const MainPaneDiv = styled.div`
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  flex: 0 0 100%;
-  min-width: 100%;
+  float: left;
   margin-bottom: 1.5rem;
   padding-top: 1.5rem;
 
   @media screen and (min-width: 992px) {
-    flex: 0 0 ${100 / 12 * 7}%;
-    min-width: ${100 / 12 * 7}%;
+    float: left;
+    max-width: ${8.3333 * 7};
+
+    @supports (display: flex) {
+      flex: 0 0 ${8.3333 * 7}%;
+      max-width: ${8.3333 * 7}%;
+    }
+
+    @supports (display: grid) {
+      padding-left: 0;
+      padding-right: 0;
+      flex: none;
+      max-width: none;
+      grid-column-end: span 7;
+    }
   }
 
   img {

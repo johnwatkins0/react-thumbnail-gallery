@@ -6,7 +6,6 @@ const ThumbPaneContainer = styled.div`
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   flex: 0 0 100%;
-  min-width: 100%;
 
   button {
     width: 25%;
@@ -25,8 +24,21 @@ const ThumbPaneContainer = styled.div`
   }
 
   @media screen and (min-width: 992px) {
-    flex: 0 0 ${100 / 12 * 5}%;
-    min-width: ${100 / 12 * 5}%;
+    float: left;
+    max-width: ${8.3333 * 5}%;
+
+    @supports (display: flex) {
+      flex: 0 0 ${8.3333 * 5}%;
+      max-width: ${8.3333 * 5}%;
+    }
+
+    @supports (display: grid) {
+      padding-left: 0;
+      padding-right: 0;
+      flex: none;
+      max-width: none;
+      grid-column-end: span 5;
+    }
   }
 `;
 

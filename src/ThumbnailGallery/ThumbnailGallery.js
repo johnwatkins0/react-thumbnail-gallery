@@ -2,11 +2,24 @@ import MainPane from './MainPane';
 import ThumbPane from './ThumbPane';
 
 const ThumbnailGalleryContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
-  align-items: center;
+
+  @media screen and (min-width: 992px) {
+    @supports (display: flex) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-column-gap: 2rem;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 `;
 
 class ThumbnailGallery extends React.Component {

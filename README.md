@@ -1,20 +1,18 @@
-# react-thumbnail-gallery
-A responsive image gallery featuring (1) a pane showing the full image, and (2) a pane with image thumbnails, titles, and descriptions. Also includes an optional filter for the WordPress [gallery] shortcode.
+# wp-react-thumbnail-gallery
+A responsive image gallery featuring (1) a pane showing the full image, and (2) a pane with image thumbnails, titles, and descriptions.
 
 ## Usage
-
-### Without WordPress
 
 For use with ES6 Javascript, install the package from NPM:
 
 ```
-npm install --save wp-react-thumbnail-gallery
+npm install --save react-thumbnail-gallery
 ```
 
-```Javascript
-import React from 'react';
+[React](https://github.com/facebook/react), [PropTypes](https://github.com/facebook/prop-types), and [styled](https://github.com/styled-components/styled-components) must be available in the window as global variables.
 
-import ThumbnailGallery from './ThumbnailGallery/ThumbnailGallery';
+```Javascript
+import ThumbnailGallery from 'react-thumbnail-gallery';
 
 const YourComponent = (items) => {
   return (

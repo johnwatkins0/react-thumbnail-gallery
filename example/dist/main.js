@@ -136,7 +136,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/example/dist/";
+/******/ 	__webpack_require__.p = "http://react-thumbnail-gallery.johnwatkins0.me/example/dist/";
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
@@ -1055,10 +1055,10 @@ var items = [{
   title: 'Blue',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur maximus tristique tempor. Integer scelerisque libero eu libero maximus accumsan. Ut consectetur nec elit finibus pellentesque.',
   altText: 'Blue',
-  src: '/example/assets/blue.png',
+  src: 'http://react-thumbnail-gallery.johnwatkins0.me/example/assets/blue.png',
   height: 600,
   width: 1200,
-  thumbSrc: '/example/assets/blue-thumb.png',
+  thumbSrc: 'http://react-thumbnail-gallery.johnwatkins0.me/example/assets/blue-thumb.png',
   thumbHeight: 150,
   thumbWidth: 150
 }, {
@@ -1066,10 +1066,10 @@ var items = [{
   title: 'Brown',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur maximus tristique tempor. Integer scelerisque libero eu libero maximus accumsan. Ut consectetur nec elit finibus pellentesque.',
   altText: 'Brown',
-  src: '/example/assets/brown.png',
+  src: 'http://react-thumbnail-gallery.johnwatkins0.me/example/assets/brown.png',
   height: 600,
   width: 1200,
-  thumbSrc: '/example/assets/brown-thumb.png',
+  thumbSrc: 'http://react-thumbnail-gallery.johnwatkins0.me/example/assets/brown-thumb.png',
   thumbHeight: 150,
   thumbWidth: 150
 }, {
@@ -1077,10 +1077,10 @@ var items = [{
   title: 'Green',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur maximus tristique tempor. Integer scelerisque libero eu libero maximus accumsan. Ut consectetur nec elit finibus pellentesque.',
   altText: 'Green',
-  src: '/example/assets/green.png',
+  src: 'http://react-thumbnail-gallery.johnwatkins0.me/example/assets/green.png',
   height: 600,
   width: 1200,
-  thumbSrc: '/example/assets/green-thumb.png',
+  thumbSrc: 'http://react-thumbnail-gallery.johnwatkins0.me/example/assets/green-thumb.png',
   thumbHeight: 150,
   thumbWidth: 150
 }, {
@@ -1088,10 +1088,10 @@ var items = [{
   title: 'Orange',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur maximus tristique tempor. Integer scelerisque libero eu libero maximus accumsan. Ut consectetur nec elit finibus pellentesque.',
   altText: 'Orange',
-  src: '/example/assets/orange.png',
+  src: 'http://react-thumbnail-gallery.johnwatkins0.me/example/assets/orange.png',
   height: 600,
   width: 1200,
-  thumbSrc: '/example/assets/orange-thumb.png',
+  thumbSrc: 'http://react-thumbnail-gallery.johnwatkins0.me/example/assets/orange-thumb.png',
   thumbHeight: 150,
   thumbWidth: 150
 }, {
@@ -1099,10 +1099,10 @@ var items = [{
   title: 'Purple',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur maximus tristique tempor. Integer scelerisque libero eu libero maximus accumsan. Ut consectetur nec elit finibus pellentesque.',
   altText: 'Purple',
-  src: '/example/assets/purple.png',
+  src: 'http://react-thumbnail-gallery.johnwatkins0.me/example/assets/purple.png',
   height: 600,
   width: 1200,
-  thumbSrc: '/example/assets/purple-thumb.png',
+  thumbSrc: 'http://react-thumbnail-gallery.johnwatkins0.me/example/assets/purple-thumb.png',
   thumbHeight: 150,
   thumbWidth: 150
 }, {
@@ -1110,10 +1110,10 @@ var items = [{
   title: 'Red',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur maximus tristique tempor. Integer scelerisque libero eu libero maximus accumsan. Ut consectetur nec elit finibus pellentesque.',
   altText: 'Red',
-  src: '/example/assets/red.png',
+  src: 'http://react-thumbnail-gallery.johnwatkins0.me/example/assets/red.png',
   height: 600,
   width: 1200,
-  thumbSrc: '/example/assets/red-thumb.png',
+  thumbSrc: 'http://react-thumbnail-gallery.johnwatkins0.me/example/assets/red-thumb.png',
   thumbHeight: 150,
   thumbWidth: 150
 }];

@@ -11,7 +11,7 @@ const main = () => {
       filename: `[name]${min}.js`,
       path: path.resolve(__dirname, 'example/dist'),
       chunkFilename: `[id].[chunkhash].bundle${min}.js`,
-      publicPath: '/example/dist/',
+      publicPath: 'http://react-thumbnail-gallery.johnwatkins0.me/example/dist/',
     },
     module: {
       rules: [

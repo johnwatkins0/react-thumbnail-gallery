@@ -82,6 +82,12 @@ const items = [
 const run = async () => {
   const root = document.querySelector('[data-react-thumbnail-gallery-example]');
 
+  console.log('root', root);
+
+  if (!root) {
+    return;
+  }
+
   if (!('PropTypes' in window)) {
     window.PropTypes = await import('prop-types');
   }

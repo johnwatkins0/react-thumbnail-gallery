@@ -79,7 +79,7 @@ const items = [
   },
 ];
 
-window.addEventListener('load', async () => {
+const run = async () => {
   const root = document.querySelector('[data-react-thumbnail-gallery-example]');
 
   if (!('PropTypes' in window)) {
@@ -106,4 +106,10 @@ window.addEventListener('load', async () => {
   }
 
   ReactDOM.render(<ThumbnailGallery items={items} />, root);
-});
+};
+
+if (document.readyState === 'loading') {
+  window.addEventListener('load', run);
+} else {
+  run();
+}

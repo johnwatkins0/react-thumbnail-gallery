@@ -1118,90 +1118,102 @@ var items = [{
   thumbWidth: 150
 }];
 
-window.addEventListener('load', _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-  var root, module, _module;
+var run = function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+    var root, module, _module;
 
-  return regeneratorRuntime.wrap(function _callee$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          root = document.querySelector('[data-react-thumbnail-gallery-example]');
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            root = document.querySelector('[data-react-thumbnail-gallery-example]');
 
-          if ('PropTypes' in window) {
-            _context.next = 5;
-            break;
-          }
+            if ('PropTypes' in window) {
+              _context.next = 5;
+              break;
+            }
 
-          _context.next = 4;
-          return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 6));
+            _context.next = 4;
+            return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 6));
 
-        case 4:
-          window.PropTypes = _context.sent;
+          case 4:
+            window.PropTypes = _context.sent;
 
-        case 5:
-          if ('React' in window) {
-            _context.next = 9;
-            break;
-          }
+          case 5:
+            if ('React' in window) {
+              _context.next = 9;
+              break;
+            }
 
-          _context.next = 8;
-          return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 7));
+            _context.next = 8;
+            return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 7));
 
-        case 8:
-          window.React = _context.sent;
+          case 8:
+            window.React = _context.sent;
 
-        case 9:
-          if ('ReactDOM' in window) {
-            _context.next = 13;
-            break;
-          }
+          case 9:
+            if ('ReactDOM' in window) {
+              _context.next = 13;
+              break;
+            }
 
-          _context.next = 12;
-          return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 8));
+            _context.next = 12;
+            return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 8));
 
-        case 12:
-          window.ReactDOM = _context.sent;
+          case 12:
+            window.ReactDOM = _context.sent;
 
-        case 13:
-          if ('styled' in window) {
-            _context.next = 19;
-            break;
-          }
+          case 13:
+            if ('styled' in window) {
+              _context.next = 19;
+              break;
+            }
 
-          _context.next = 16;
-          return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 9));
+            _context.next = 16;
+            return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 9));
 
-        case 16:
-          module = _context.sent;
+          case 16:
+            module = _context.sent;
 
-          window.styledComponents = module;
-          window.styled = module.default;
+            window.styledComponents = module;
+            window.styled = module.default;
 
-        case 19:
-          if ('ThumbnailGallery' in window) {
-            _context.next = 24;
-            break;
-          }
+          case 19:
+            if ('ThumbnailGallery' in window) {
+              _context.next = 24;
+              break;
+            }
 
-          _context.next = 22;
-          return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 10));
+            _context.next = 22;
+            return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 10));
 
-        case 22:
-          _module = _context.sent;
+          case 22:
+            _module = _context.sent;
 
-          window.ThumbnailGallery = _module.default;
+            window.ThumbnailGallery = _module.default;
 
-        case 24:
+          case 24:
 
-          ReactDOM.render(React.createElement(ThumbnailGallery, { items: items }), root);
+            ReactDOM.render(React.createElement(ThumbnailGallery, { items: items }), root);
 
-        case 25:
-        case 'end':
-          return _context.stop();
+          case 25:
+          case 'end':
+            return _context.stop();
+        }
       }
-    }
-  }, _callee, undefined);
-})));
+    }, _callee, undefined);
+  }));
+
+  return function run() {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+if (document.readyState === 'loading') {
+  window.addEventListener('load', run);
+} else {
+  run();
+}
 
 /***/ })
 /******/ ]);

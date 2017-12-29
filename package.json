@@ -1,24 +1,24 @@
 {
   "name": "react-thumbnail-gallery",
-  "version": "2.0.1",
-  "description":
-    "A responsive image gallery featuring (1) a pane showing the full image, and (2) a pane with image thumbnails, titles, and descriptions.",
+  "version": "2.0.2",
+  "description": "A responsive image gallery featuring (1) a pane showing the full image, and (2) a pane with image thumbnails, titles, and descriptions.",
   "main": "src/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/johnwatkins0/react-thumbnail-gallery.git"
   },
   "scripts": {
-    "start":
-      "parcel example/src/index.html -d example -o --public-url /react-thumbnail-gallery/example/",
-    "build":
-      "parcel build example/src/index.html -d example --public-url /react-thumbnail-gallery/example/",
+    "start": "parcel example/src/index.html -d example -o --public-url /react-thumbnail-gallery/example/",
+    "build": "parcel build example/src/index.html -d example --public-url /react-thumbnail-gallery/example/",
     "lint": "eslint src",
     "prepare": "npm run build",
     "pretest": "npm run lint",
     "test": "jest"
   },
-  "keywords": ["wordpress", "react"],
+  "keywords": [
+    "wordpress",
+    "react"
+  ],
   "author": "John Watkins",
   "license": "ISC",
   "bugs": {

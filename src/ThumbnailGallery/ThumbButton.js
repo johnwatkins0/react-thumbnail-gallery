@@ -1,10 +1,22 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
 const StyledThumbButton = styled.button`
   background: none;
   border: none;
   opacity: ${props => (props.active ? '1' : '.8')};
 `;
 
-const ThumbButton = ({ active, altText, height, width, src, setActiveItem, id }) => (
+const ThumbButton = ({
+  active,
+  altText,
+  height,
+  width,
+  src,
+  setActiveItem,
+  id,
+}) => (
   <StyledThumbButton active={active} onClick={() => setActiveItem(id)}>
     <img src={src} alt={altText} height={height} width={width} />
   </StyledThumbButton>

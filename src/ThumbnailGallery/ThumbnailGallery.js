@@ -1,3 +1,7 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
 import MainPane from './MainPane';
 import ThumbPane from './ThumbPane';
 
@@ -50,7 +54,9 @@ class ThumbnailGallery extends React.Component {
       return null;
     }
 
-    const activeItem = this.props.items.filter(item => item.id === this.state.activeItem)[0];
+    const activeItem = this.props.items.filter(
+      item => item.id === this.state.activeItem,
+    )[0];
 
     return (
       <ThumbnailGalleryContainer className="ThumbnailGallery">

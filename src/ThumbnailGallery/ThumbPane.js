@@ -1,4 +1,8 @@
 /* eslint react/no-danger: 0 */
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
 import ThumbButton from './ThumbButton';
 
 const ThumbPaneContainer = styled.div`
@@ -56,7 +60,9 @@ const ThumbPane = ({ items, activeItemId, setActiveItem }) => {
   return (
     <ThumbPaneContainer>
       <ThumbTitle dangerouslySetInnerHTML={{ __html: activeItem.title }} />
-      <ThumbDescription dangerouslySetInnerHTML={{ __html: activeItem.description }} />
+      <ThumbDescription
+        dangerouslySetInnerHTML={{ __html: activeItem.description }}
+      />
       {items.map(item => (
         <ThumbButton
           key={item.id}

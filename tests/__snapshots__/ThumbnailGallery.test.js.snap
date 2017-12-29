@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThumbnailGallery renders correctly. 1`] = `
+<div
+  className="ThumbnailGallery sc-EHOje iWEkEs"
+>
+  <div
+    className="sc-bdVaJa UcgSa"
+  >
+    <img
+      alt="Blue"
+      height={600}
+      src="/react-thumbnail-gallery/example/assets/blue.png"
+      width={1200}
+    />
+  </div>
+  <div
+    className="sc-htpNat dhFSqw"
+  >
+    <h1
+      className="sc-bxivhb jxIFkG"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "Blue",
+        }
+      }
+    />
+    <p
+      className="sc-ifAKCX slpxh"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur maximus tristique tempor. Integer scelerisque libero eu libero maximus accumsan. Ut consectetur nec elit finibus pellentesque.",
+        }
+      }
+    />
+    <button
+      className="sc-bwzfXH cUzJuN"
+      onClick={[Function]}
+    >
+      <img
+        alt="Blue"
+        height={150}
+        src="/react-thumbnail-gallery/example/assets/blue-thumb.png"
+        width={150}
+      />
+    </button>
+    <button
+      className="sc-bwzfXH iWBcjN"
+      onClick={[Function]}
+    >
+      <img
+        alt="Brown"
+        height={150}
+        src="/react-thumbnail-gallery/example/assets/brown-thumb.png"
+        width={150}
+      />
+    </button>
+    <button
+      className="sc-bwzfXH iWBcjN"
+      onClick={[Function]}
+    >
+      <img
+        alt="Green"
+        height={150}
+        src="/react-thumbnail-gallery/example/assets/green-thumb.png"
+        width={150}
+      />
+    </button>
+    <button
+      className="sc-bwzfXH iWBcjN"
+      onClick={[Function]}
+    >
+      <img
+        alt="Orange"
+        height={150}
+        src="/react-thumbnail-gallery/example/assets/orange-thumb.png"
+        width={150}
+      />
+    </button>
+    <button
+      className="sc-bwzfXH iWBcjN"
+      onClick={[Function]}
+    >
+      <img
+        alt="Purple"
+        height={150}
+        src="/react-thumbnail-gallery/example/assets/purple-thumb.png"
+        width={150}
+      />
+    </button>
+    <button
+      className="sc-bwzfXH iWBcjN"
+      onClick={[Function]}
+    >
+      <img
+        alt="Red"
+        height={150}
+        src="/react-thumbnail-gallery/example/assets/red-thumb.png"
+        width={150}
+      />
+    </button>
+  </div>
+</div>
+`;

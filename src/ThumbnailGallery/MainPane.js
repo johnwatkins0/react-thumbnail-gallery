@@ -1,3 +1,7 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
 const MainPaneDiv = styled.div`
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -31,7 +35,12 @@ const MainPaneDiv = styled.div`
 
 const MainPane = ({ item }) => (
   <MainPaneDiv>
-    <img src={item.src} height={item.height} width={item.width} alt={item.altText} />
+    <img
+      src={item.src}
+      height={item.height}
+      width={item.width}
+      alt={item.altText}
+    />
   </MainPaneDiv>
 );
 

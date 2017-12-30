@@ -49,14 +49,15 @@ class ThumbnailGallery extends React.Component {
     this.setState({ activeItem });
   }
 
+  getActiveItem = () =>
+    this.props.items.filter(item => item.id === this.state.activeItem)[0];
+
   render() {
     if (this.state.activeItem === null) {
       return null;
     }
 
-    const activeItem = this.props.items.filter(
-      item => item.id === this.state.activeItem,
-    )[0];
+    const activeItem = this.getActiveItem();
 
     return (
       <ThumbnailGalleryContainer className="ThumbnailGallery">
